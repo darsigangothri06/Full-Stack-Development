@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <div>
+        <center>
+            <h1 id="top">Student Registration form</h1>
+        </center>
+    </div>
+
+    <form action="Thankyou.html" method="post">
+        <fieldset>
+            <legend>
+                <h2>Personal Details: </h2>
+            </legend>
+            <u><h3>Student Details:</h3></u>
+            <blockquote>
+                <lable for="firstname">First name :</lable>
+                <input type="text" name="firstname" id="firstname" placeholder="First name" maxlength="20" required><br> <br>
+                <lable for="middlename">Middle name : </lable>
+                <input type="text" name="middlename" id="middlename" maxlength="10" placeholder="Middle name"> <br> <br>
+                <lable for="lastname">Last name : </lable>
+                <input type="text" name="lastname" maxlength="20" id="lastname" placeholder="Last name" required>
+            </blockquote>
+            <u><h3>Parent Details:</h3></u>
+            <blockquote>
+                <lable for="firstname">Mother name :</lable>
+                <input type="text" id="firstname" placeholder="Mother name" required><br> <br>
+                <lable for="middlename">Father Name : </lable>
+                <input type="text" id="middlename" placeholder="Father name" required> <br>
+            </blockquote>
+
+            <h4>Gender:</h4>
+            <input type="radio" name="gender" value="male" required>
+            <lable for="gender">Male</lable>
+            <input type="radio" name="gender" value="female" required>
+            <lable for="gender">Female</lable>
+            <input type="radio" name="gender" value="other" required>
+            <lable for="gender">Other</lable>
+
+            <br><br>
+
+            <!-- <div style="size: 10;"> -->
+            <label for="dob">Date of birth</label>
+            <input type="date" name="dob"> <br> <br>
+            <lable for="age">Age:</lable>
+            <input type="text" name="age" placeholder="17" size="1" required>
+
+            <br><br>
+
+            <label for="address"><u>Address: </u></label>
+            <blockquote>
+                <textarea id="address" rows="5" cols="50" placeholder="<!--Your address here-->" required></textarea>
+            </blockquote>
+            <!-- </div> -->
+        </fieldset>
+
+        <fieldset>
+            <legend>
+                <h2>Academic Details:</h2>
+            </legend>
+            <div style="border: 1px solid;">
+                <h4><u>SSC DETAILS:</u> </h4>
+                <label for="schlname">Name of your school: </label>
+                <input type="text" name="schlname" placeholder="Your school name here" required> <br> <br>
+                <label for="place">Place: </label>
+                <input type="text" id="place" placeholder="Place of your college" required> <br><br>
+                <lable for="resulttype">Result type : </lable>
+                <select>
+					<option>Percentage</option>
+					<option selected="selected">CGPA</option>
+				</select>
+                <br><br>
+                <lable for="result">Enter your result:</lable>
+                <input type="tel" id="result" placeholder="Percent/CGPA" required> <br> <br>
+
+                <label for="marklist">Upload your mark list: </label>
+                <input type="file" id="marklist" required><br><br>
+            </div> <br> <br>
+
+            <div style="border: 1px solid;">
+                <h4><u>INTERMEDIATE DETAILS:</u></h4>
+                <label for="schlname">Name of your Institution: </label>
+                <!-- <input type="text" name="schlname" placeholder="Your school name here"> <br> <br> -->
+                <select required>
+					<option>Free Chaitanya</option>
+					<option>Parayana</option>
+				</select>
+                <br> <br>
+                <label for="place">Place: </label>
+                <input type="text" id="place" placeholder="Place of your college" required>
+                <br><br>
+                <lable for="resulttype">Result type : </lable>
+                <select required>
+					<option>Percentage</option>
+					<option selected="selected">CGPA</option>
+				</select>
+                <br><br>
+                <lable for="result">Enter your result:</lable>
+                <input type="tel" id="result" placeholder="Percent/CGPA" required> <br> <br>
+
+                <label for="marklist">Upload your mark list: </label>
+                <input type="file" id="marklist" required><br><br>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>
+                <h2>Contact Details:</h2>
+            </legend>
+            <label for="phnum">Phone number: </label>
+            <!-- <label for="countrycode">Country code</label> -->
+            <input type="text" size="1" placeholder="+91" required>
+            <input type="tel" id="phnum" name="phonenum" pattern="[0-9]{10}" placeholder="0123456789" size="8" required> <br><br>
+            <label for="e-mail">Email id :</label>
+            <input type="e-mail" id="e-mail" name="e-mail" placeholder="Your mail id" size="27" required> <br><br>
+            <label for="pass">Password: </label>
+            <input type="Password" id="pass" name="password" placeholder="Enter password" required><br><br>
+            <label for="pass">Retype Password: </label>
+            <input type="Password" id="pass" name="password" placeholder="Re-type password" required><br><br>
+        </fieldset>
+
+        <br><br>
+        <input type="submit" value="Submit details">
+    </form>
+    <p>
+        &copy; Darsi Gangothri</p>
+    <p>
+        <a href="#top">Top of the webpage</a>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+h1 {
+    font-style: oblique;
+    color: blue;
+}
+
+h3 {
+    color: blue;
+}
+
+blockquote {
+    color: brown;
+}
+
+legend {
+    color: purple;
+}
+
+fieldset {
+    color: green;
+}
+
+input {
+    color: red;
+}
