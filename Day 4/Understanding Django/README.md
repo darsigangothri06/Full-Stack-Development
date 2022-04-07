@@ -146,7 +146,7 @@ It will display in your server.
 
 ## Connection Backend DB with Django
 
-* `django-admin startproject KITS_T=model`
+* `django-admin startproject KITS_model`
 
 * Move to `cd KITS_model`
 
