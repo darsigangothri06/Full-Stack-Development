@@ -45,7 +45,7 @@ def display(request):
     * `TEMP_DIR = os.path.join(BASE_DIR, "template")`
     * `STATIC_DIR = os.path.join(BASE_DIR, "static")`
     * Go to `TEMPLATES` List and add `[TEMP_DIR]` for `DIRS`
-      * Add `'static/'` for `STATIC_URL` and add `STATICFILES_DIR = [STATIC_DIR]`
+      * Add `'static/'` for `STATIC_URL` and add `STATICFILES_DIRS = (STATIC_DIR,)`
   * Once `settings.py` setup is completed, we have to create `index.html`
 
 ```
@@ -54,7 +54,7 @@ a welcome message in index.html in template folder and link demo.css
 {% load static %}
 
 -- Syntax for linking css files --
-<link rel = "" href = {% static "css/demo.css"}>
+<link rel = "stylesheet" href = '{% static "css/demo.css" %}'>
 ```
 
 * Open `views.py`
@@ -90,7 +90,7 @@ urlpattern = [path('admin/', admin.site.urls), path('xyz', v1.display)]
   ```
   linking images under index.html
   
-  <img src = "{% static "images/chirul.jpg" % }" alt = "alt msg">
+<img src = '{% static "images/new.jpg" %}' alt = "alt msg">
   
   in body tag
   ```
