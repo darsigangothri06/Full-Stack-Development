@@ -12,7 +12,7 @@
 
 * Open your project root folder, there we can find some files.
 
-* In `migrations` folder, open `views.py`
+* Open `views.py`
   * We need to send the request and receive the response back
 
 ```python
@@ -38,7 +38,7 @@ def display(request):
 * Run `py manage.py startapp CAI`
 * Here `KITS_TEMP`is a `Project` and `CAI` is an application
   * We can have Multiple Applications in a single folder.
-  * Move to `settings.py` and add `'CAI,'` in InstalledApps List
+  * Move to `settings.py` and add `'CAI',` in InstalledApps List
   * Create a new folder `template` by right clicking the`KITS_TEMP` folder (root folder of our project) - For HTML files
   * Create a new folder `static` by right clicking the`KITS_TEMP` folder (root folder of our project) - For CSS files and images.
   * Create a path in `settings.py` under BASE_DIR
@@ -65,7 +65,7 @@ a welcome message in index.html in template folder and link demo.css
   from django.http import HttpResponse
   
   def display(request):
-      return request(render,'index.html')
+      return render(request,'index.html')
   ```
 
 * Open `urls.py`
