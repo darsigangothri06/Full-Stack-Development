@@ -121,6 +121,8 @@ urlpattern = [path('admin/', admin.site.urls), path('xyz', v1.display)]
   from CAI2 import views as v2
   
   urlpatters = [path('abc', v2.template_view)]
+  # if we use 'abc', we have to type /abc after the ipaddress
+  # Otherwise, we can ignore 'abc', then it will open directly
   ```
 
 * Create `student.html` in `template` folder
