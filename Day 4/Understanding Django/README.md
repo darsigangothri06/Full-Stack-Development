@@ -27,7 +27,7 @@ def display(request):
 
 * In `urls.py` add `path('abc', views.display)` in  `urlpatterns` 
 * Open Chrome, and type `abc` after file name. Your test will be displayed
-* It is difficult to wrote all the code in string format, so we use templates
+* It is difficult to write all the code in string format, so we use templates
 
 
 
@@ -147,11 +147,143 @@ It will display in your server.
 ## Connection Backend DB with Django
 
 * `django-admin startproject KITS_T=model`
+
 * Move to `cd KITS_model`
+
 * Run `py manage.py startapp CAI`
+
 * Here `KITS_TEMP`is a `Project` and `dbmodel` is an application
   * We can have Multiple Applications in a single folder.
   * Move to `settings.py` and add `'dbmodel,'` in InstalledApps List
   * Check `dbconnection` is perfect or not.
-    * 
+    * `from django.db import connection`
+  
+  ```python
+  from django.db import connection
+  c = connection.cursor()
+  # if these stmnts executed, then connection is established successfully
+  ```
+  
+* Open `models.py` in `dbmodel`
 
+```python
+# create a class
+from django.db import models
+
+# Employee class extends Model Class, Model Class has all these methods like Integer field, char field
+class Employee(models.Model):
+    eno = models.IntegerField()
+    ename = models.CharField(max_length = 20)
+```
+
+* To Execute these commands in database, we use `migrations`
+* Run `py manage.py makemigrations` from `KITS_model` in CMD
+* To see the query, run `py manage.py sqlmigrate dbmodel 0001`. You will get the data inside the database.
+* To store these data into database, run `py manage.py migrate`
+
+
+
+## Creating Super User
+
+* Run `py manage.py createsuperuser` and enter `email` and `password` under project folder.
+
+* Run the server `py manage.py runserver ` open `ipaddress/admin`
+
+* Login with username and password
+
+* There you will not see the table that you have created
+
+* You have to import `dbmodel.model` into `admin.py`
+
+* Open `admin.py`
+
+  ```python
+  from dbmodel.model import Employee
+  
+  admin.site.register(Employee)
+  ```
+
+* Now Employee is visible after running `runserver` 
+
+* To get name, data of the table, Go to `models.py` and add `__str__(self)`
+
+  ```python
+  # create a class
+  from django.db import models
+  
+  # Employee class extends Model Class, Model Class has all these methods like Integer field, char field
+  class Employee(models.Model):
+      eno = models.IntegerField()
+      ename = models.CharField(max_length = 20)
+      
+      def __str__(self):
+          return "Employee num: " + str(self.eno)
+  ```
+
+* To print all the values in a list, go to `admin.py` and create a class
+
+  ```python
+  from dbmodel.model import Employee
+  
+  class EmployeeAdmin(admin.ModelAdmin):
+      list_display = ['eno', 'ename']
+  
+  admin.site.register(Employee, EmployeeAdmin)
+  ```
+
+  
+
+## Getting data from database into Web browser
+
+* Open `views.py`
+
+  ```python
+  from django.shortcuts import render
+  from dbmodel.models import Employee
+  
+  def empdata(request):
+      emp_list = Employee.object.all()
+      
+      my_dict = {'emp_list' : emp_list}
+      return render(request, 'student.html', my_dict)
+  ```
+
+* To store the data from employee database, we created `student.html` file
+
+* Create `templates` and `static` apps by right clicking `KITS_model`
+
+* Create `student.html` under `template` folder
+
+  ```html
+  <body>
+      <h1>
+          Employee Details
+      </h1>
+      <table border = "2">
+          <thead>
+          	<th>Eno</th>
+              <th>Ename</th>
+          </thead>
+          {% for emp in emp_list %}
+          <tr>
+              <td>{{emp.eno}}</td>
+              <td>{{emp.ename}}</td>
+          </tr>
+          {% endfor %}
+      </table>
+  </body>
+  ```
+
+* Add `TEMP_DIR = os.path.join(BASE_DIR, template)` in `settings.py`
+
+* Add `template` views into `urls.py`
+
+  ```python
+  from django.contrib import admin
+  from django.urls import path
+  from dbmodel import views
+  
+  urlpattern = [path('admin/', admin.site.urls), path('abc', views.empdata)]
+  ```
+
+   
