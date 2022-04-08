@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Lucky Number</title>
+    </head>
+
+    <body>
+        <script>
+            var name = prompt("Enter your name: ")
+            var actor = prompt("Enter Your Favourite Actor: ")
+            var lucky = Number(prompt("Enter your lucky number: "))
+            var dish = prompt("Enter your Favourite dish: ")
+            var nameCondition = false
+            var actorCondition = false
+            var luckyCondition = false
+            var dishCondition = false
+            if(name[0] == "d")
+                nameCondition = true
+            if(actor[actor.length - 1] == "r")
+                actorCondition = true
+            if(lucky == 7)
+                luckyCondition = true
+            if(dish.length >= 6)
+                dishCondition = true
+            if(nameCondition && actorCondition && luckyCondition && dishCondition)
+                document.write("<h2><i>Hi, You are a secret agent<br>You have to kidnap atleast 10 students in your class</i></h2>")
+            else document.write("Thankyou for filling")
+        </script>
+    </body>
+</html>

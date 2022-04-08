@@ -9,5 +9,5 @@
 
 ## Questions
 
-* Where do we use simple if, if-else, if-else if ladder
-* 
+* Check given number is odd or even
+* Print given string in Title
