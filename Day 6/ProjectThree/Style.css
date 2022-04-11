@@ -1,0 +1,47 @@
+body {
+    background-color: lightcoral;
+}
+
+h1 {
+    color: blue;
+    font-size: 80px;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+}
+
+h1:hover {
+    text-decoration: underline;
+    color: brown;
+}
+
+h1 span {
+    background-color: burlywood;
+    border-radius: 15px;
+}
+
+table {
+    border: groove black 10px;
+    margin-left: 34%;
+    background-color: white;
+}
+
+td {
+    height: 50px;
+    width: 50px;
+    border: 3px solid red;
+    border-collapse: collapse;
+}
+
+#black {
+    background-color: black;
+}
+
+#white {
+    background-color: white;
+}
+
+#black:hover {
+    background-color: red;
+}

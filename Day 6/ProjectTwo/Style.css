@@ -1,0 +1,22 @@
+h1 {
+    font-family: cursive;
+    color: blue;
+    font-style: italic;
+    font-size: 15ex;
+    text-underline-position: below;
+    background-color: peachpuff;
+    border-radius: 6ex;
+    justify-content: center;
+    text-align: center;
+}
+
+h1:hover {
+    text-decoration: underline;
+    text-shadow: 5px;
+    text-justify: auto;
+    color: red;
+}
+
+body {
+    background-color: lightpink;
+}

@@ -1,0 +1,14 @@
+h1 {
+    font-family: cursive;
+    color: blue;
+    font-style: italic;
+    font-size: 15ex;
+    text-underline-position: below;
+}
+
+h1:hover {
+    text-decoration: underline;
+    text-shadow: 5px;
+    text-justify: auto;
+    color: red;
+}

@@ -1,0 +1,20 @@
+h1 {
+    color: red;
+    text-align: center;
+}
+
+h2 {
+    color: yellow;
+}
+
+ol li {
+    color: lightskyblue;
+}
+
+#inner2 li {
+    color: crimson;
+}
+
+#inner1 li {
+    color: green;
+}
