@@ -1,0 +1,35 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+div {
+    font-size: 180px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    border: 10px solid white;
+    margin-left: 220px;
+    margin-right: 220px;
+}
+
+marquee {
+    margin-top: 12%;
+    font-size: 50px;
+    background-color: white;
+    color: black;
+    margin-left: 2%;
+    margin-right: 2%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h3 {
+    font-size: 72px;
+    background-color: white;
+    color: black;
+    margin-left: 32%;
+    margin-right: 36%;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}

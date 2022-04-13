@@ -1,0 +1,11 @@
+marquee {
+    background-color: palevioletred;
+    color: white;
+    font-size: 30px;
+    scroll-behavior: smooth;
+    border-width: 100px;
+}
+
+body {
+    background-color: aqua;
+}
