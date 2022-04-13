@@ -90,8 +90,9 @@ urlpattern = [path('admin/', admin.site.urls), path('xyz', v1.display)]
   ```
   linking images under index.html
   
+
 <img src = '{% static "images/new.jpg" %}' alt = "alt msg">
-  
+
   in body tag
   ```
 
@@ -200,7 +201,7 @@ class Employee(models.Model):
 * Open `admin.py`
 
   ```python
-  from dbmodel.model import Employee
+  from dbmodel.model import Employee    # here dbmodel is appname
   
   admin.site.register(Employee)
   ```
@@ -289,3 +290,81 @@ class Employee(models.Model):
   ```
 
    
+
+## Passing Data from Frontend to Backend
+
+* Create a Project `KITS15` and an app `test15`
+
+* Create a file in `test15` and name as `forms.py`
+
+* Since, it is a customized file we have to import `form` from `django`
+
+  ```python
+  # forms.py
+  from django import forms
+  
+  class StudentForm(forms.form):
+      name = forms.CharField()
+      marks = forms.IntegerFeild()
+      email = forms.EmailFeild()
+  ```
+
+* Go to `views.py`
+
+  ```python
+  from django.shortcuts import render
+  from test15 import forms
+  
+  # to open index file - we create another function
+  # this file opens only when the user clicks submit button
+  
+  def success(request):
+      if request.method == "POST":
+          form =    # ------- INCOMPLETE (END OF DAY 7 & WORKSHOP)
+  # Remove this function and form action
+  
+  def studentReg(request):
+      # to get the data from the form,
+      form = forms.StudentForm()
+      my_dict = {'form': form}
+      return render(request, "std.html", my_dict)
+  ```
+
+* Go to `urls.py`
+
+  ```python
+  from test15 import views
+  # add this path to url_patterns
+  url_patterns = [path('abc', views.studentReg)]
+  ```
+
+* Since, we have to create a `std.html` file, we need `template` folder.
+
+* Create `template` folder and add the path in `settings.py` file
+
+* Create `std.html` in `template` folder
+
+  ```html
+  <body>
+      <div class = "" align = "center">
+          <h1>
+              Student Resgistration Form
+          </h1>
+          <form class = "" action = "index.html" method = "post">
+              {{form.as_p}}
+              {% csrf_token %}
+              <input type = "submit" name = "" value = "Submit">
+          </form>
+      </div>
+  </body>
+  ```
+
+* Create `index.html` file in `template` folder
+
+  ```html
+  <body>
+      thankyou for filling my form. :)
+  </body>
+  ```
+
+  

@@ -1,0 +1,63 @@
+h2 {
+    color: red;
+    text-align: center;
+    font-weight: 900;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h3 {
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 0.1px;
+}
+
+legend {
+    text-align: center;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: red;
+    color: white;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 1px;
+    font-weight: 500;
+}
+
+fieldset {
+    background-color: #2636cb;
+    margin-top: 2%;
+}
+
+body {
+    color: white;
+}
+
+#boxhedding {
+    text-align: center;
+    background-color: red;
+    font-size: 25px;
+    color: yellow;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+#container {
+    border: 2px solid white;
+    padding: 2px;
+}
+
+ol {
+    font-size: larger;
+    margin-right: 5%;
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.line {
+    line-height: 6px;
+}
